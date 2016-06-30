@@ -86,6 +86,12 @@ namespace tile_map
     tick_(0),
     cache_thread_(new CacheThread(this))
   {
+    QNetworkProxy proxy;
+    proxy.setType(QNetworkProxy::HttpProxy);
+    proxy.setHostName("localhost");
+    proxy.setPort(3128);
+    QNetworkProxy::setApplicationProxy(proxy);
+
     QNetworkDiskCache* disk_cache = new QNetworkDiskCache(this);
     disk_cache->setCacheDirectory(cache_dir_);
     network_manager_.setCache(disk_cache);
