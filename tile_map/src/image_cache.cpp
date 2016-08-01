@@ -34,6 +34,7 @@
 #include <QtAlgorithms>
 #include <QByteArray>
 #include <QList>
+#include <QNetworkProxy>
 #include <QNetworkAccessManager>
 #include <QNetworkDiskCache>
 #include <QUrl>
